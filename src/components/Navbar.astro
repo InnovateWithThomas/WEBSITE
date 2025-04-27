@@ -1,0 +1,12 @@
+---
+import { useLang } from '../i18n/useLang.js';
+
+const { lang } = Astro.props;
+const t = useLang(lang);
+---
+<nav>
+  <a href="/">{t.home}</a> |
+  <a href="/projects">{t.projects}</a> |
+  <a href="/blog">{t.blog}</a> |
+  <a href="/about">{t.about}</a>
+</nav>
