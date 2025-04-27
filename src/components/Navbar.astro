@@ -3,10 +3,27 @@ import { useLang } from '../i18n/useLang.js';
 
 const { lang } = Astro.props;
 const t = useLang(lang);
+
+const switchLanguageUrl = () => {
+  const currentPath = Astro.url.pathname;
+  
+  if (lang === 'fr') {
+    return currentPath.replace(/^\/fr/, '') || '/';
+  } else {
+    return '/fr' + (currentPath === '/' ? '' : currentPath);
+  }
+};
 ---
 <nav>
-  <a href="/">{t.home}</a> |
-  <a href="/projects">{t.projects}</a> |
-  <a href="/blog">{t.blog}</a> |
-  <a href="/about">{t.about}</a>
+  <a href={lang === 'fr' ? '/fr/' : '/'}>{t.home}</a> |
+  <a href={lang === 'fr' ? '/fr/projects' : '/projects'}>{t.projects}</a> |
+  <a href={lang === 'fr' ? '/fr/blog' : '/blog'}>{t.blog}</a> |
+  <a href={lang === 'fr' ? '/fr/about' : '/about'}>{t.about}</a>
+
+  <!-- Switcher langue -->
+  <span style="margin-left: 1rem;">
+    <a href={switchLanguageUrl()}>
+      {lang === 'fr' ? 'EN' : 'FR'}
+    </a>
+  </span>
 </nav>
