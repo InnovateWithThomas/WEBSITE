@@ -1,0 +1,33 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+// Récupérer tous les posts
+const allPosts = await getCollection('blog');
+
+// Filtrer pour anglais uniquement
+const posts = (allPosts as CollectionEntry<'blog'>[])
+  .filter(post => post.data.lang === 'en')
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+---
+<BaseLayout title="Blog" description="My blog articles" lang="en">
+  <slot name="navbar">
+    <Navbar lang="en" />
+  </slot>
+
+  <h1>Blog 🚀</h1>
+  <ul>
+    {posts.map(post => (
+      <li>
+        <a href={`/blog/${post.id}`}>{post.data.title}</a><br/>
+        <small>{post.data.description}</small>
+      </li>
+    ))}
+  </ul>
+
+  <slot name="footer">
+    <Footer lang="en" />
+  </slot>
+</BaseLayout>
