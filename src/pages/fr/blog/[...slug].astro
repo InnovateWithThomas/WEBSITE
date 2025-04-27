@@ -5,12 +5,13 @@ import Navbar from '../../../components/Navbar.astro';
 import Footer from '../../../components/Footer.astro';
 
 const { slug } = Astro.params;
+const cleanSlug = typeof slug === 'string' ? slug.replace(/\.md$/, '') : slug;
 
 // Charger le post FR depuis la collection 'blog'
-const post = await getEntry('blog', slug);
+const post = await getEntry('blog', cleanSlug);
 
 if (!post) {
-  throw new Error(`Post not found: ${slug}`);
+  throw new Error(`Post not found: ${cleanSlug}`);
 }
 ---
 <BaseLayout title={post.data.title} description={post.data.description} lang="fr">
