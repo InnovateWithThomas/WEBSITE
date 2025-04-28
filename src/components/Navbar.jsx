@@ -34,13 +34,16 @@ export default function Navbar({ lang, translatedPostUrl }) {
   };
 
   return (
-    <nav>
-      <a href={currentLang === "fr" ? "/fr/" : "/"}>{t.home}</a> |
+    <nav class="navbar">
+      <button id="burger" aria-label="Toggle navigation">
+        ☰
+      </button>
+      <a href={currentLang === "fr" ? "/fr/" : "/"}>{t.home}</a>
       <a href={currentLang === "fr" ? "/fr/projects" : "/projects"}>
         {t.projects}
-      </a>{" "}
-      |<a href={currentLang === "fr" ? "/fr/blog" : "/blog"}>{t.blog}</a> |
-      <a href={currentLang === "fr" ? "/fr/about" : "/about"}>{t.about}</a> |
+      </a>
+      <a href={currentLang === "fr" ? "/fr/blog" : "/blog"}>{t.blog}</a>
+      <a href={currentLang === "fr" ? "/fr/about" : "/about"}>{t.about}</a>
       <span style={{ marginLeft: "1rem" }}>
         <a href={translatedPostUrl ?? switchLanguageUrl()}>
           {currentLang === "fr" ? "EN" : "FR"}

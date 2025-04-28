@@ -6,13 +6,85 @@ import Footer from '../components/Footer.astro';
 
 <BaseLayout title="My Portfolio" description="Welcome to my site!">
   <slot name="navbar">
-    <Navbar lang="en"/>
+    <Navbar lang="en" />
   </slot>
 
-  <h1>Hello World 🚀</h1>
-  <p>Welcome to my portfolio and blog!</p>
+  <!-- Home Hero Section -->
+  <section id="home-hero">
+    <h1>Hello, i'm Thomas PAZZÉ</h1>
+    <p>Welcome to my portfolio and blog!</p>
+    <div>
+      <a href="/blog" class="btn">Visit Blog</a>
+      <a href="https://www.linkedin.com" target="_blank" class="btn">LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-list">
+      <div class="project">
+        <h3>Project One</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="https://example.com" target="_blank" class="btn">View Project</a>
+      </div>
+      <div class="project">
+        <h3>Project Two</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="https://example.com" target="_blank" class="btn">View Project</a>
+      </div>
+      <div class="project">
+        <h3>Project Three</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="https://example.com" target="_blank" class="btn">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about-me">
+    <h2>About Me</h2>
+    <p>Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology.</p>
+    <div class="about-content">
+      <div class="about-know-me">
+        <h3>Get to know me!</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at elit sit amet turpis volutpat pretium.</p>
+      </div>
+      <div class="about-skills">
+        <h3>My Skills</h3>
+        <div class="skills-list">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">React</span>
+          <span class="skill">Astro</span>
+          <span class="skill">Node.js</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <form action="#" method="POST" class="contact-form">
+      <label>
+        Name
+        <input type="text" name="name" required />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required />
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </section>
 
   <slot name="footer">
-    <Footer lang="en"/>
+    <Footer lang="en" />
   </slot>
 </BaseLayout>

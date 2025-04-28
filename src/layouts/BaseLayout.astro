@@ -1,5 +1,6 @@
 ---
 const { title, description, lang = 'en' } = Astro.props;
+import "../styles/global.css";
 ---
 
 <html lang={lang}>
@@ -8,12 +9,13 @@ const { title, description, lang = 'en' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-  </head>
+		</head>
   <body>
     <slot name="navbar" {lang} />
     <main>
       <slot />
     </main>
     <slot name="footer" {lang} />
+		<script src="/src/scripts/burger.js" type="module"></script>
   </body>
 </html>

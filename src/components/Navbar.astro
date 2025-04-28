@@ -16,15 +16,20 @@ const switchLanguageUrl = () => {
   }
 };
 ---
-<nav>
-  <a href={lang === 'fr' ? '/fr/' : '/'}>{t.home}</a> |
-  <a href={lang === 'fr' ? '/fr/projects' : '/projects'}>{t.projects}</a> |
-  <a href={lang === 'fr' ? '/fr/blog' : '/blog'}>{t.blog}</a> |
-  <a href={lang === 'fr' ? '/fr/about' : '/about'}>{t.about}</a>
+<div id="burger" class="burger">
+  <span></span>
+	<span></span>
+	<span></span>
+</div>
+<nav id="nav-links" class="hidden">
+  <li><a class="nav-button-link" href={lang === 'fr' ? '/fr/' : '/'}>{t.home}</a></li>
+  <li><a class="nav-button-link" href={lang === 'fr' ? '/fr/projects' : '/projects'}>{t.projects}</a></li>
+  <li><a class="nav-button-link" href={lang === 'fr' ? '/fr/blog' : '/blog'}>{t.blog}</a></li>
+  <li><a class="nav-button-link" href={lang === 'fr' ? '/fr/about' : '/about'}>{t.about}</a></li>
 
   <!-- Switcher langue -->
   <span style="margin-left: 1rem;">
-		<a href={translatedPostUrl ?? switchLanguageUrl()}>
+		<a id="lang-toggle" class="nav-button-link" href={translatedPostUrl ?? switchLanguageUrl()}>
 			{lang === 'fr' ? 'EN' : 'FR'}
 		</a>
 	</span>
