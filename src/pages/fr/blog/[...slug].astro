@@ -1,13 +1,13 @@
 ---
-import { getEntry, render } from 'astro:content';
+import { getEntry, render, getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import Navbar from '../../../components/Navbar.astro';
+import Navbar from '../../../components/Navbar.jsx';
 import Footer from '../../../components/Footer.astro';
 
 const { slug } = Astro.params;
 const cleanSlug = typeof slug === 'string' ? slug.replace(/\.md$/, '') : slug;
 
-// Charger le post FR depuis la collection 'blog'
 const post = await getEntry('blog', cleanSlug);
 
 if (!post) {
@@ -15,10 +15,18 @@ if (!post) {
 }
 
 const { Content } = await render(post);
+
+const allPosts = await getCollection('blog');
+const translatedPost = allPosts.find((p: CollectionEntry<'blog'>) => 
+  p.data.translationKey === post.data.translationKey && 
+  p.data.lang === "en"
+);
+
+const translatedPostUrl = translatedPost ? `/blog/${translatedPost.slug}` : null;
 ---
 <BaseLayout title={post.data.title} description={post.data.description} lang="fr">
   <slot name="navbar">
-    <Navbar lang="fr" />
+    <Navbar lang="fr" translatedPostUrl={translatedPostUrl} client:load />
   </slot>
 
   <h1>{post.data.title}</h1>

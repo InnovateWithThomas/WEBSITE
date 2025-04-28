@@ -1,6 +1,8 @@
 ---
 import { useLang } from '../i18n/useLang.js';
 
+const { translatedPostUrl } = Astro.props;
+
 const { lang } = Astro.props;
 const t = useLang(lang);
 
@@ -22,8 +24,8 @@ const switchLanguageUrl = () => {
 
   <!-- Switcher langue -->
   <span style="margin-left: 1rem;">
-    <a href={switchLanguageUrl()}>
-      {lang === 'fr' ? 'EN' : 'FR'}
-    </a>
-  </span>
+		<a href={translatedPostUrl ?? switchLanguageUrl()}>
+			{lang === 'fr' ? 'EN' : 'FR'}
+		</a>
+	</span>
 </nav>

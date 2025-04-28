@@ -3,6 +3,7 @@ title: "premier poste 2025"
 description: "ceci est un test."
 date: 2025-01-01
 lang: "fr"
+translationKey: "2025-first-post"
 ---
 
-Bonjours world!
+# Bonjours world!
