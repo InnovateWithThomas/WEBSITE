@@ -22,15 +22,19 @@ const switchLanguageUrl = () => {
 	<span></span>
 </div>
 <nav id="nav-links" class="hidden">
-  <li><a class="nav-button-link" href={lang === 'fr' ? '/fr/' : '/'}>{t.home}</a></li>
-  <li><a class="nav-button-link" href={lang === 'fr' ? '/fr/projects' : '/projects'}>{t.projects}</a></li>
-  <li><a class="nav-button-link" href={lang === 'fr' ? '/fr/blog' : '/blog'}>{t.blog}</a></li>
-  <li><a class="nav-button-link" href={lang === 'fr' ? '/fr/about' : '/about'}>{t.about}</a></li>
-
-  <!-- Switcher langue -->
-  <span style="margin-left: 1rem;">
-		<a id="lang-toggle" class="nav-button-link" href={translatedPostUrl ?? switchLanguageUrl()}>
-			{lang === 'fr' ? 'EN' : 'FR'}
+	<ul class="nav-list">
+		<li><a class="linkEffect linkEffect--insideOut" href={lang === 'fr' ? '/fr/' : '/'}>{t.home}</a></li>
+  <li><a class="linkEffect linkEffect--insideOut" href={lang === 'fr' ? '/fr/projects' : '/projects'}>{t.projects}</a></li>
+  <li><a class="linkEffect linkEffect--insideOut" href={lang === 'fr' ? '/fr/blog' : '/blog'}>{t.blog}</a></li>
+  <li><a class="linkEffect linkEffect--insideOut" href={lang === 'fr' ? '/fr/about' : '/about'}>{t.about}</a></li>
+  <li class="lang-toggle-li">
+		<a id="lang-toggle" href={translatedPostUrl ?? switchLanguageUrl()}>
+			{
+			lang === 'fr'
+			? <img class="lang-icon" src="/public/USA.svg" alt="Passez en Anglais" width="36" height="24">
+			: <img class="lang-icon" src="/public/FRANCE.svg" alt="Switch to FRENCH" width="36" height="24">
+			}
 		</a>
-	</span>
+	</li>
+	</ul>
 </nav>
