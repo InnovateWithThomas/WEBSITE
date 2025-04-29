@@ -1,7 +1,7 @@
 /* FONTS */
 @font-face {
   font-family: "Overpass";
-  src: url("/public/fonts/overpass-300.woff2");
+  src: url("/fonts/overpass-300.woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: "Overpass";
-  src: url("/public/fonts/overpass-900.woff2");
+  src: url("/fonts/overpass-900.woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -43,6 +43,7 @@ body {
   font-family: "Overpass", Arial, sans-serif;
   background-color: var(--color-background);
   color: var(--color-text);
+  line-height: 1.5;
 }
 
 h1,
@@ -181,20 +182,17 @@ h2 {
     opacity: 1 !important;
     max-height: none !important;
     pointer-events: auto !important;
-    display: flex !important;
+    display: grid !important;
     flex-direction: row;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
   }
 
   #nav-links .nav-list {
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 5vh;
-    justify-content: space-evenly;
+    height: 6vh;
   }
+
   #nav-links .nav-list li {
     margin: 0 1rem;
   }
@@ -412,4 +410,34 @@ button:hover,
 
 .contact-form button:hover {
   background-color: var(--color-accent-hover);
+}
+
+/* FOOTER */
+footer {
+  width: 100%;
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: #222;
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (min-width: 600px) {
+  footer {
+    padding: 3rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  footer {
+    text-align: center;
+    padding: 4rem 5%;
+    font-size: 1.125rem;
+  }
 }
