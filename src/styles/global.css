@@ -511,6 +511,7 @@ footer p {
 .blog {
   padding-inline: 13%;
   padding-top: 0;
+  padding-bottom: 0;
 }
 
 .posts a {
@@ -571,4 +572,36 @@ header a {
 
 .post-date::before {
   content: "-";
+}
+
+/* POST */
+.date {
+  text-align: center;
+  width: 100%;
+  padding-top: 6%;
+}
+
+.post-article {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 20%;
+}
+
+.post-article article h2,
+h1 {
+  text-align: left;
+}
+
+.post-article article section {
+  min-height: 10vh;
+}
+
+.post-title {
+  text-align: center;
+}
+
+@media (min-width: 769px) {
+  .post-article {
+    padding-inline: 30%;
+  }
 }

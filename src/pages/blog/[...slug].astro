@@ -29,13 +29,20 @@ const translatedPostUrl = translatedPost ? `/fr/blog/${translatedPost.slug}` : n
   <slot name="navbar">
     <Navbar lang="en" translatedPostUrl={translatedPostUrl} client:load />
   </slot>
-
-  <h1>{post.data.title}</h1>
-  <p>{post.data.date}</p>
-  <article>
-    <Content />
-  </article>
-
+	<div class="post-article">
+		<time class="date" datetime={post.data.date}>
+			{new Date(post.data.date).toLocaleDateString("en-US", {
+				month: "short",
+				day: "2-digit",
+				year: "numeric"
+			})}
+		</time>
+		<h1 class="post-title">{post.data.title}</h1>
+		<article>
+			<Content />
+		</article>
+	</div>
+	
   <slot name="footer">
     <Footer lang="en" />
   </slot>
