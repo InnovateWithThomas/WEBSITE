@@ -34,21 +34,56 @@ export default function Navbar({ lang, translatedPostUrl }) {
   };
 
   return (
-    <nav class="navbar">
-      <button id="burger" aria-label="Toggle navigation">
-        ☰
-      </button>
-      <a href={currentLang === "fr" ? "/fr/" : "/"}>{t.home}</a>
-      <a href={currentLang === "fr" ? "/fr/projects" : "/projects"}>
-        {t.projects}
-      </a>
-      <a href={currentLang === "fr" ? "/fr/blog" : "/blog"}>{t.blog}</a>
-      <a href={currentLang === "fr" ? "/fr/about" : "/about"}>{t.about}</a>
-      <span style={{ marginLeft: "1rem" }}>
-        <a href={translatedPostUrl ?? switchLanguageUrl()}>
-          {currentLang === "fr" ? "EN" : "FR"}
-        </a>
-      </span>
-    </nav>
+    <div>
+      <div id="burger" class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="nav-links" class="hidden">
+        <ul class="nav-list">
+          <li>
+            <a
+              class="linkEffect linkEffect--insideOut"
+              href={currentLang === "fr" ? "/fr/" : "/"}
+            >
+              {t.home}
+            </a>
+          </li>
+          <li>
+            <a
+              class="linkEffect linkEffect--insideOut"
+              href={currentLang === "fr" ? "/fr/projects" : "/projects"}
+            >
+              {t.projects}
+            </a>
+          </li>
+          <li>
+            <a
+              class="linkEffect linkEffect--insideOut"
+              href={currentLang === "fr" ? "/fr/blog" : "/blog"}
+            >
+              {t.blog}
+            </a>
+          </li>
+          <li>
+            <a
+              class="linkEffect linkEffect--insideOut"
+              href={currentLang === "fr" ? "/fr/about" : "/about"}
+            >
+              {t.about}
+            </a>
+          </li>
+          <li>
+            <a
+              class="linkEffect linkEffect--insideOut"
+              href={translatedPostUrl ?? switchLanguageUrl()}
+            >
+              {currentLang === "fr" ? "EN" : "FR"}
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 }

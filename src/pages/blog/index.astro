@@ -17,15 +17,35 @@ const posts = (allPosts as CollectionEntry<'blog'>[])
     <Navbar lang="en" />
   </slot>
 
-  <h1>Blog 🚀</h1>
-  <ul>
-    {posts.map(post => (
-      <li>
-        <a href={`/blog/${post.id}`}>{post.data.title}</a><br/>
-        <small>{post.data.description}</small>
-      </li>
-    ))}
-  </ul>
+  <h1 id="blog-title">📰 Blog</h1>
+	<section class="blog">
+		<ul class="posts">
+			{posts.map(post => (
+				<hr />
+				<li class="post">
+					<article>
+						<header>
+							<a href={`/blog/${post.id}`}>{post.data.title}</a><br />
+							<time
+								class="post-date"
+								datetime={post.data.date}
+							>
+								{new Date(post.data.date).toLocaleDateString("en-US", {
+									month: "short",
+									day: "2-digit",
+									year: "numeric"
+								})}
+							</time>
+						</header>
+						<p class="post-description">
+							{post.data.description}
+						</p>
+					</article>
+				</li>
+			))}
+		</ul>
+	</section>
+  
 
   <slot name="footer">
     <Footer lang="en" />

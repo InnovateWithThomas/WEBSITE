@@ -24,17 +24,17 @@ const switchLanguageUrl = () => {
 <nav id="nav-links" class="hidden">
 	<ul class="nav-list">
 		<li><a class="linkEffect linkEffect--insideOut" href={lang === 'fr' ? '/fr/' : '/'}>{t.home}</a></li>
-  <li><a class="linkEffect linkEffect--insideOut" href={lang === 'fr' ? '/fr/projects' : '/projects'}>{t.projects}</a></li>
-  <li><a class="linkEffect linkEffect--insideOut" href={lang === 'fr' ? '/fr/blog' : '/blog'}>{t.blog}</a></li>
-  <li><a class="linkEffect linkEffect--insideOut" href={lang === 'fr' ? '/fr/about' : '/about'}>{t.about}</a></li>
-  <li class="lang-toggle-li">
-		<a id="lang-toggle" href={translatedPostUrl ?? switchLanguageUrl()}>
-			{
-			lang === 'fr'
-			? <img class="lang-icon" src="/USA.svg" alt="Passez en Anglais" width="36" height="24">
-			: <img class="lang-icon" src="/FRANCE.svg" alt="Switch to FRENCH" width="36" height="24">
-			}
-		</a>
-	</li>
+		<li><a class="linkEffect linkEffect--insideOut" href={lang === 'fr' ? '/fr/projects' : '/projects'}>{t.projects}</a></li>
+		<li><a class="linkEffect linkEffect--insideOut" href={lang === 'fr' ? '/fr/blog' : '/blog'}>{t.blog}</a></li>
+		<li><a class="linkEffect linkEffect--insideOut" href={lang === 'fr' ? '/fr/about' : '/about'}>{t.about}</a></li>
+		<li class="lang-toggle-li">
+			<a id="lang-toggle" href={translatedPostUrl ?? switchLanguageUrl()}>
+				{
+				lang === 'fr'
+				? <img class="lang-icon" src="/USA.svg" alt="Passez en Anglais" width="36" height="24">
+				: <img class="lang-icon" src="/FRANCE.svg" alt="Switch to FRENCH" width="36" height="24">
+				}
+			</a>
+		</li>
 	</ul>
 </nav>
