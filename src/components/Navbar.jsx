@@ -69,17 +69,25 @@ export default function Navbar({ lang, translatedPostUrl }) {
           <li>
             <a
               class="linkEffect linkEffect--insideOut"
-              href={currentLang === "fr" ? "/fr/about" : "/about"}
-            >
-              {t.about}
-            </a>
-          </li>
-          <li>
-            <a
-              class="linkEffect linkEffect--insideOut"
               href={translatedPostUrl ?? switchLanguageUrl()}
             >
-              {currentLang === "fr" ? "EN" : "FR"}
+              {currentLang === "fr" ? (
+                <img
+                  class="lang-icon"
+                  src="/USA.svg"
+                  alt="Passez en Anglais"
+                  width="36"
+                  height="24"
+                />
+              ) : (
+                <img
+                  class="lang-icon"
+                  src="/FRANCE.svg"
+                  alt="Switch to FRENCH"
+                  width="36"
+                  height="24"
+                />
+              )}
             </a>
           </li>
         </ul>

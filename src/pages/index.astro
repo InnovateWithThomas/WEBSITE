@@ -14,9 +14,11 @@ import Footer from '../components/Footer.astro';
     <h1>Hello, i'm Thomas PAZZÉ</h1>
     <p>Welcome to my portfolio and blog!</p>
     <div class="links">
-      <a href="/blog" class="link wipe">Blog</a>
-      <a href="https://www.linkedin.com" target="_blank" class="link wipe">LinkedIn</a>
+			<button class="btn-syle-1" data-hover="click me!" onclick="window.location.href='/blog'"><div>blog</div></button>
     </div>
+		<div class="mouse">
+			<div class="scroll"></div>
+		</div>
   </section>
 
   <!-- Projects Section -->
@@ -26,17 +28,17 @@ import Footer from '../components/Footer.astro';
       <div class="project">
         <h3>Project One</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <a href="https://example.com" target="_blank" class="btn">View Project</a>
+				<button class="btn-syle-1" data-hover="click me!" onclick="window.location.href='#'"><div>more info</div></button>
       </div>
       <div class="project">
         <h3>Project Two</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <a href="https://example.com" target="_blank" class="btn">View Project</a>
+        <button class="btn-syle-1" data-hover="click me!" onclick="window.location.href='#'"><div>more info</div></button>
       </div>
       <div class="project">
         <h3>Project Three</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <a href="https://example.com" target="_blank" class="btn">View Project</a>
+        <button class="btn-syle-1" data-hover="click me!" onclick="window.location.href='#'"><div>more info</div></button>
       </div>
     </div>
   </section>

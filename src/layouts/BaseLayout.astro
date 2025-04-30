@@ -1,5 +1,6 @@
 ---
 const { title, description, lang = 'en' } = Astro.props;
+import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
 ---
 
@@ -8,8 +9,9 @@ import "../styles/global.css";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+		<ClientRouter />
     <meta name="description" content={description} />
-		</head>
+	</head>
   <body>
     <slot name="navbar" {lang} />
     <main>
