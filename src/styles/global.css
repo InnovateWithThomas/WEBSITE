@@ -87,19 +87,19 @@ h6 {
 }
 
 h1 {
-  font-size: 4.883vmax;
+  font-size: 3.4181vmax;
 }
 h2 {
-  font-size: 3.905vmax;
+  font-size: 2.7335vmax;
 }
 h3 {
-  font-size: 3.124vmax;
+  font-size: 2.1868vmax;
 }
 h4 {
-  font-size: 2.5vmax;
+  font-size: 1.75vmax;
 }
 h5 {
-  font-size: 2vmax;
+  font-size: 1.4vmax;
 }
 
 li {
@@ -108,6 +108,12 @@ li {
 
 p {
   margin-bottom: 1em;
+}
+
+@media (min-width: 768px) {
+  p:not(footer p) {
+    font-size: 1.3rem;
+  }
 }
 
 hr {
@@ -172,6 +178,7 @@ hr {
   top: 2%;
   right: 4%;
   position: fixed;
+  z-index: 9999;
 
   & > span {
     width: 100%;
@@ -438,7 +445,7 @@ h2 {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* GRID */
+/* PROJECT */
 .projects-list {
   display: flex;
   flex-direction: column;
@@ -793,4 +800,41 @@ h1 {
       transform: translateY(20px);
     }
   }
+}
+
+/* ABOUT ME */
+#about-me {
+  padding-bottom: 10%;
+  padding-top: 10%;
+}
+
+#about-me,
+#contact {
+  min-height: 0;
+}
+.about-content,
+#about-me h2,
+#about-me p {
+  padding-inline: 10%;
+}
+
+.about-content h3,
+.about-me p:first-of-type {
+  text-align: center;
+}
+
+/* CONTACT */
+
+#contact p {
+  padding-inline: 20%;
+}
+
+#contact a {
+  color: var(--color-third);
+  font-weight: bold;
+}
+
+.mail {
+  color: var(--color-text);
+  text-underline-offset: 4px;
 }
