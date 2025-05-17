@@ -8,8 +8,4 @@ document.addEventListener("DOMContentLoaded", () => {
       burger.classList.toggle("active");
     });
   }
-
-  burger.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
 });
