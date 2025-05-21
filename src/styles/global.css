@@ -466,7 +466,7 @@ h2 {
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.5rem;
   margin-top: 1rem;
 }
@@ -477,6 +477,7 @@ h2 {
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
+  text-transform: uppercase;
 }
 
 /* FORM AND CONTACT */
@@ -838,4 +839,28 @@ h1 {
 .mail {
   color: var(--color-text);
   text-underline-offset: 4px;
+}
+
+.need-highlited em {
+  background-color: var(--color-secondary-hover);
+  color: var(--color-secondary);
+}
+
+/* Work in progress */
+.wip {
+  display: none;
+}
+
+.tool,
+.project-tool {
+  background-color: var(--color-third);
+  color: var(--color-secondary);
+}
+
+.project-tool {
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
