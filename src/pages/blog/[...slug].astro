@@ -29,6 +29,7 @@ const translatedPostUrl = translatedPost ? `/fr/blog/${translatedPost.slug}` : n
   <slot name="navbar">
     <Navbar lang="en" translatedPostUrl={translatedPostUrl} client:load />
   </slot>
+	<a href="/blog" id="post-return-link">return</a>
 	<div class="post-article">
 		<time class="date" datetime={post.data.date}>
 			{new Date(post.data.date).toLocaleDateString("en-US", {

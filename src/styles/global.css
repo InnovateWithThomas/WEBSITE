@@ -864,3 +864,20 @@ h1 {
   margin-right: 5px;
   margin-bottom: 5px;
 }
+
+#post-return-link {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  #post-return-link {
+    display: block;
+    padding-left: 2rem;
+    text-decoration: none;
+    color: var(--color-secondary-hover);
+  }
+
+  #post-return-link::before {
+    content: "←";
+  }
+}
