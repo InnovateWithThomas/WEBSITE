@@ -24,17 +24,25 @@ const translatedPost = allPosts.find((p: CollectionEntry<'blog'>) =>
 
 const translatedPostUrl = translatedPost ? `/blog/${translatedPost.slug}` : null;
 ---
-<BaseLayout title={post.data.title} description={post.data.description} lang="fr">
+<BaseLayout title={post.data.title} description={post.data.description} lang="en">
   <slot name="navbar">
     <Navbar lang="fr" translatedPostUrl={translatedPostUrl} client:load />
   </slot>
-
-  <h1>{post.data.title}</h1>
-  <p>{post.data.date}</p>
-  <article>
-    <Content />
-  </article>
-
+	<a href="/blog" id="post-return-link">retour</a>
+	<div class="post-article">
+		<time class="date" datetime={post.data.date}>
+			{new Date(post.data.date).toLocaleDateString("fr-FR", {
+				month: "short",
+				day: "2-digit",
+				year: "numeric"
+			})}
+		</time>
+		<h1 class="post-title">{post.data.title}</h1>
+		<article class="post-content">
+			<Content />
+		</article>
+	</div>
+	
   <slot name="footer">
     <Footer lang="fr" />
   </slot>

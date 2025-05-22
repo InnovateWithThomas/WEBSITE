@@ -4,15 +4,98 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 ---
 
-<BaseLayout title="My Portfolio" description="Welcome to my site!">
+<BaseLayout title="Mon Portfolio" description="Bienvenue sur mon site !">
   <slot name="navbar">
-    <Navbar lang="fr"/>
+    <Navbar lang="fr" />
   </slot>
 
-  <h1>Hello World 🚀</h1>
-  <p>Bienvenue sur mon portfolio et blog !</p>
+  <!-- Section Héros Accueil -->
+  <section id="home-hero">
+    <h1>Bonjour, je suis Thomas PAZZÉ 🤙</h1>
+    <p>Bienvenue sur mon portfolio et blog !</p>
+    <div class="links">
+      <button class="btn-syle-1" data-hover="clique ici !" onclick="window.location.href='/blog'" transition:persist=""><div>blog</div></button>
+    </div>
+    <div class="mouse">
+      <div class="scroll"></div>
+    </div>
+  </section>
+
+  <!-- Section Projets -->
+  <section id="projects">
+    <h2>Quelques-uns de mes projets</h2>
+    <div class="projects-list">
+      <div class="project">
+        <h3>APPLICATION WEB : Plateforme de recrutement</h3>
+        <p>Développement d'une plateforme de recrutement axée sur les tests d'application, la sécurité des données, l’analyse des besoins clients, la gestion de projet agile et l'intégration fluide au sein d'une équipe de développement.</p>
+        <span class="skill project-tool">api platform</span>
+        <span class="skill project-tool">codeception</span>
+        <span class="skill project-tool">reactjs</span>
+        <span class="skill project-tool">sql</span>
+        <span class="skill project-tool">symfony</span>
+        <button class="btn-syle-1 wip" data-hover="clique ici !" onclick="window.location.href='#'"><div>plus d'infos</div></button>
+      </div>
+      <div class="project">
+        <h3>APPLICATION WEB : Gestion de films</h3>
+        <p>Développement d’une application de gestion de films avec des fonctionnalités CRUD complètes et un système de filtrage permettant de trier les films selon des critères spécifiques.</p>
+        <span class="skill project-tool">php Legacy</span>
+        <span class="skill project-tool">mysql</span>
+        <button class="btn-syle-1 wip" data-hover="clique ici !" onclick="window.location.href='#'"><div>plus d'infos</div></button>
+      </div>
+      <div class="project">
+        <h3>APPLICATION WEB : Partage de favoris</h3>
+        <p>Conception et développement d'une plateforme interactive permettant aux utilisateurs de partager et organiser des favoris récupérés via une API.</p>
+        <span class="skill project-tool">REACT</span>
+        <span class="skill project-tool">VITEJS</span>
+        <button class="btn-syle-1 wip" data-hover="clique ici !" onclick="window.location.href='#'"><div>plus d'infos</div></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section À propos de moi -->
+  <section id="about-me">
+    <h2>À propos de moi</h2>
+    <p>Je suis un <em>Architecte numérique polyvalent</em> actuellement basé en France.</p>
+    <div class="about-content">
+      <div class="about-know-me">
+        <h3>Apprenez à me connaître !</h3>
+        <p class="need-highlited">
+          Salut ! Je suis Thomas, un développeur web passionné et déterminé avec un fort intérêt pour tout ce qui touche à l’informatique. Mon parcours dans la tech a commencé par une simple curiosité, qui s’est vite transformée en une réelle passion pour le code et la résolution de problèmes.
+          J’adore découvrir de nouvelles technologies, apprendre en continu, et trouver des solutions intelligentes à des défis complexes.
+          Je suis quelqu’un qui valorise la <em>détermination</em> et la <em>curiosité</em>. Toujours prêt à progresser et à rester à jour avec les dernières tendances.
+          En dehors du monde tech, je pratique le JJB (Jiu-Jitsu Brésilien), un sport qui m’enseigne la <em>discipline</em>, la <em>concentration</em> et la <em>persévérance</em>, des valeurs que j’applique aussi dans ma vie professionnelle.
+        </p>
+        <p class="need-highlited">Construisons <em>ensemble</em> quelque chose de grand !</p>
+      </div>
+      <div class="about-skills">
+        <h3>Mes compétences</h3>
+        <div class="skills-list">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">React</span>
+          <span class="skill">c# .net</span>
+          <span class="skill">symfony</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      Que ce soit pour une collaboration, un projet freelance, un partenariat ou simplement échanger autour de vos idées, je suis toujours ouvert à la discussion. Vous pouvez me contacter à l’adresse suivante :
+      <a 
+        class="mail" 
+        href="mailto:thomas.pazze@gmail.com"
+      >
+        thomas.pazze@gmail.com
+      </a>
+    </p>
+  </section>
 
   <slot name="footer">
-    <Footer lang="fr"/>
+    <Footer lang="fr" />
   </slot>
 </BaseLayout>
