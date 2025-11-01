@@ -6,7 +6,7 @@ import node from "@astrojs/node";
 export default defineConfig({
   output: "server",
   integrations: [preact()],
-  site: 'https://innovatewiththomas.github.io',
+  site: 'https://innovatewiththomas.github.io/WEBSITE',
   base: '/',
   vite: {
     ssr: {
