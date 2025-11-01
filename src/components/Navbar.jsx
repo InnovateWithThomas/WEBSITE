@@ -98,9 +98,9 @@ export default function Navbar({ lang, translatedPostUrl }) {
           <div id="lang-toggle">
           <a href={translatedPostUrl ?? switchLanguageUrl()}>
               {currentLang === "fr" ? (
-								<img src="/public/lang/en.svg" alt="English" />
+								<img src="/lang/en.svg" alt="English" width="32" height="32"/>
 							) : (
-								<img src="/public/lang/fr.svg" alt="Français" />
+								<img src="/lang/fr.svg" alt="Français" width="32" height="32"/>
 							)}
             </a>
           </div>

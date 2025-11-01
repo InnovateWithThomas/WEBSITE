@@ -854,7 +854,7 @@ h1 {
 
     z-index: -1;
 
-		background-image: url("underline.svg");
+		background-image: url("/underline.svg");
     background-repeat: no-repeat;
 
 		background-size: cover;
