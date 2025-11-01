@@ -7,7 +7,7 @@ export default defineConfig({
   output: "server",
   integrations: [preact()],
   site: 'https://innovatewiththomas.github.io/WEBSITE',
-  base: '/',
+  base: '/WEBSITE/',
   vite: {
     ssr: {
       external: ["node:buffer"],
