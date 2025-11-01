@@ -25,9 +25,10 @@
 /* COLOR VARIABLE */
 :root {
   --color-primary: #1e222a;
-  --color-primary-hover: #d9ff40;
+  --color-primary-hover: #eeba48;
   --color-secondary-hover: #005fbe;
   --color-background: #fff;
+	--color-background-secondary: #e0e0e0;
   --color-text: #1e222a;
   --color-text-secondary: 9fb0c5;
   --color-secondary: #f5f7f9;
@@ -45,6 +46,7 @@
 /* GENERAL */
 html,
 body {
+	
   height: 100%;
   width: 100%;
   font-family: "Atkinson", sans-serif;
@@ -98,14 +100,32 @@ h2 {
   font-size: 2.7335vmax;
 }
 h3 {
-  font-size: 2.1868vmax;
+  font-size: 1.7vmax;
 }
 h4 {
-  font-size: 1.75vmax;
-}
-h5 {
   font-size: 1.4vmax;
 }
+h5 {
+  font-size: 1.1vmax;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 6vw;
+  }
+  h2 {
+    font-size: 5vw;
+  }
+  h3 {
+    font-size: 4.5vw;
+  }
+  h4 {
+    font-size: 3.5vw;
+  }
+  h5 {
+    font-size: 3vw;
+  }
+}
+
 
 li {
   list-style: none;
@@ -278,7 +298,6 @@ hr {
   #nav-footer {
     display: grid;
     grid-auto-flow: column;
-    gap: 0;
   }
 
   #nav-list li {
@@ -296,9 +315,23 @@ hr {
     padding-bottom: 0;
   }
 
+	#linkdin-links {
+		margin-right: 20px;
+	}
+	.nav-social-links > a {
+		margin-right: 20px;
+	}
+
   #lang-toggle {
-    margin-left: 10px;
+    margin-left: 20px;
+		display: flex;
+		align-items: center;
   }
+
+	#lang-toggle a {
+		display: flex;
+		align-items: center;
+}
 
   #nav-list.hidden {
     opacity: 1 !important;
@@ -460,24 +493,6 @@ h2 {
   padding: 1rem;
   border-radius: 10px;
   text-align: center;
-}
-
-/* SKILL BADGES */
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.skill {
-  background-color: var(--color-secondary);
-  color: var(--color-text);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  text-transform: uppercase;
 }
 
 /* FORM AND CONTACT */
@@ -814,16 +829,154 @@ h1 {
 #contact {
   min-height: 0;
 }
+
+.about-me-pitch {
+	margin-bottom: 150px;
+}
 .about-content,
 #about-me h2,
 #about-me p {
-  padding-inline: 10%;
+  padding-inline: 15%;
 }
 
 .about-content h3,
 .about-me p:first-of-type {
   text-align: center;
 }
+
+.about-content {
+  display: flex;
+  align-items: flex-start; 
+  justify-content: space-between; 
+  flex-wrap: wrap;
+}
+
+.about-know-me, .about-img {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.about-know-me {
+  flex: 1;
+  padding-right: 20px;
+  margin-bottom: 100px;
+}
+
+.about-img {
+  flex: 0 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+	justify-content: center;
+	}
+
+
+
+
+
+@media (max-width: 768px) {
+
+	.about-content,
+	#about-me h2,
+	#about-me p {
+		padding-inline: 1%;
+	}
+
+  .about-content {
+    flex-direction: column; /* Empile les sections verticalement */
+    align-items: center; /* Centrer les éléments */
+  }
+
+  .about-img {
+		max-width: 70%;
+		max-height: 40%;
+    order: -1; /* Place l'image avant le texte */
+    margin-right: 0; /* Enlever la marge à droite */
+    margin-bottom: 20px; /* Ajoute un espace sous l'image */
+  }
+
+  .about-know-me {
+    text-align: center; /* Centre le texte sur les petits écrans */
+    margin-bottom: 20px; /* Ajoute de l'espace sous le texte */
+  }
+}
+
+
+/* About me skill */
+.about-skills {
+	width: 100%;
+  margin-bottom: 20px;
+}
+
+
+.about-skills {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: var(--color-secondary);
+  border-radius: 10px;
+}
+
+.about-skills h3 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.skills-category {
+  margin-bottom: 30px;
+}
+
+.skills-category h4 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.skill {
+  background-color: var(--color-background-secondary);
+  padding: 8px 15px;
+  margin: 5px 12px;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+
+.skill:hover {
+  background-color: var(--color-primary-hover);
+  color: var(--color-secondary);
+}
+
+@media (max-width: 768px) {
+  .about-skills {
+    padding: 10px;
+  }
+
+  .about-skills h3 {
+    font-size: 1.75rem;
+  }
+
+  .skills-category h4 {
+    font-size: 1.25rem;
+  }
+
+  .skill {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    margin: 5px 8px;
+  }
+}
+
 
 /* CONTACT */
 

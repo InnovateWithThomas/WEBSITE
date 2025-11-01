@@ -15,6 +15,7 @@ import Footer from '../../components/Footer.astro';
     <p>Bienvenue sur mon portfolio et blog !</p>
     <div class="links">
       <button class="btn-syle-1" data-hover="clique ici !" onclick="window.location.href='/blog'" transition:persist=""><div>blog</div></button>
+			<button class="btn-syle-1" data-hover="clique ici !" onclick="window.location.href='#contact'" transition:persist=""><div>contact</div></button>
     </div>
     <div class="mouse">
       <div class="scroll"></div>
@@ -24,30 +25,38 @@ import Footer from '../../components/Footer.astro';
   <!-- Section À propos de moi -->
   <section id="about-me">
     <h2>À propos de moi</h2>
-    <p>Je suis un <em>Architecte numérique polyvalent</em> actuellement basé en France.</p>
+    <p class="about-me-pitch">Je suis un <em>Architecte numérique polyvalent</em> actuellement basé en France.</p>
     <div class="about-content">
       <div class="about-know-me">
         <h3>Apprenez à me connaître !</h3>
         <p class="need-highlited">
-          Salut ! Je suis Thomas, un développeur web passionné et déterminé avec un fort intérêt pour tout ce qui touche à l’informatique. Mon parcours dans la tech a commencé par une simple curiosité, qui s’est vite transformée en une réelle passion pour le code et la résolution de problèmes.
-          J’adore découvrir de nouvelles technologies, apprendre en continu, et trouver des solutions intelligentes à des défis complexes.
-          Je suis quelqu’un qui valorise la <em>détermination</em> et la <em>curiosité</em>. Toujours prêt à progresser et à rester à jour avec les dernières tendances.
-          En dehors du monde tech, je pratique le JJB (Jiu-Jitsu Brésilien), un sport qui m’enseigne la <em>discipline</em>, la <em>concentration</em> et la <em>persévérance</em>, des valeurs que j’applique aussi dans ma vie professionnelle.
+					Je suis Thomas, développeur web passionné et déterminé, actuellement basé en France. Mon objectif est simple : <em>apprendre</em> autant que possible, devenir un expert dans mon domaine et résoudre des problèmes complexes avec des solutions efficaces. Je me concentre sur la <em>maîtrise</em> des technologies et la constante amélioration de mes compétences. L’essentiel pour moi est d’atteindre un haut niveau de spécialisation.
         </p>
         <p class="need-highlited">Construisons <em>ensemble</em> quelque chose de grand !</p>
       </div>
+			<div class="about-img">
+				<img src="/img/aboutme.jpg" alt="Image de Thomas" width="400" height="400" />
+			</div>
       <div class="about-skills">
-        <h3>Mes compétences</h3>
-        <div class="skills-list">
-          <span class="skill">HTML</span>
-          <span class="skill">CSS</span>
-          <span class="skill">JavaScript</span>
-          <span class="skill">React</span>
-          <span class="skill">c# .net</span>
-          <span class="skill">symfony</span>
-        </div>
-      </div>
-    </div>
+				<h3>Mes compétences</h3>
+				<div class="skills-category">
+					<h4>Langages de programmation</h4>
+					<div class="skills-list">
+						<span class="skill">C#</span>
+						<span class="skill">Python</span>
+						<span class="skill">PHP</span>
+						<span class="skill">PL/SQL</span>
+					</div>
+				</div>
+				<div class="skills-category">
+					<h4>Frameworks</h4>
+					<div class="skills-list">
+						<span class="skill">React</span>
+						<span class="skill">Symfony</span>
+					</div>
+				</div>
+			</div>
+		</div>
   </section>
 
   <!-- Section Contact -->
