@@ -5,7 +5,8 @@ import preact from "@astrojs/preact";
 export default defineConfig({
   output: "server",
   integrations: [preact()],
-  adapter: cloudflare({}),
+  site: 'https://innovatewiththomas.github.io',
+	base: '/github-pages',
   vite: {
     ssr: {
       external: ["node:buffer"],
