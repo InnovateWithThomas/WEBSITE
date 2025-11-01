@@ -25,9 +25,10 @@
 /* COLOR VARIABLE */
 :root {
   --color-primary: #1e222a;
-  --color-primary-hover: #d9ff40;
+  --color-primary-hover: #eeba48;
   --color-secondary-hover: #005fbe;
   --color-background: #fff;
+	--color-background-secondary: #e0e0e0;
   --color-text: #1e222a;
   --color-text-secondary: 9fb0c5;
   --color-secondary: #f5f7f9;
@@ -480,24 +481,6 @@ h2 {
   text-align: center;
 }
 
-/* SKILL BADGES */
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.skill {
-  background-color: var(--color-secondary);
-  color: var(--color-text);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-}
-
 /* FORM AND CONTACT */
 .contact-form {
   display: flex;
@@ -874,19 +857,9 @@ h1 {
 	justify-content: center;
 	}
 
-.about-skills {
-	width: 100%;
-  margin-bottom: 20px;
-}
 
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-}
 
-.skill {
-  margin: 5px 10px; /* Espacement entre les compétences */
-}
+
 
 @media (max-width: 768px) {
 
@@ -902,6 +875,8 @@ h1 {
   }
 
   .about-img {
+		max-width: 70%;
+		max-height: 40%;
     order: -1; /* Place l'image avant le texte */
     margin-right: 0; /* Enlever la marge à droite */
     margin-bottom: 20px; /* Ajoute un espace sous l'image */
@@ -910,6 +885,81 @@ h1 {
   .about-know-me {
     text-align: center; /* Centre le texte sur les petits écrans */
     margin-bottom: 20px; /* Ajoute de l'espace sous le texte */
+  }
+}
+
+
+/* About me skill */
+.about-skills {
+	width: 100%;
+  margin-bottom: 20px;
+}
+
+
+.about-skills {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: var(--color-secondary);
+  border-radius: 10px;
+}
+
+.about-skills h3 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.skills-category {
+  margin-bottom: 30px;
+}
+
+.skills-category h4 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.skill {
+  background-color: var(--color-background-secondary);
+  padding: 8px 15px;
+  margin: 5px 12px;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+
+.skill:hover {
+  background-color: var(--color-primary-hover);
+  color: var(--color-secondary);
+}
+
+@media (max-width: 768px) {
+  .about-skills {
+    padding: 10px;
+  }
+
+  .about-skills h3 {
+    font-size: 1.75rem;
+  }
+
+  .skills-category h4 {
+    font-size: 1.25rem;
+  }
+
+  .skill {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    margin: 5px 8px;
   }
 }
 

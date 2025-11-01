@@ -15,7 +15,8 @@ import Footer from '../components/Footer.astro';
     <p>Welcome to my portfolio and blog!</p>
     <div class="links">
 			<button class="btn-syle-1" data-hover="click me!" onclick="window.location.href='/blog'" transition:persist=""><div>blog</div></button>
-    </div>
+			<button class="btn-syle-1" data-hover="clique ici !" onclick="window.location.href='#contact'" transition:persist=""><div>contact</div></button>
+		</div>
 		<div class="mouse">
 			<div class="scroll"></div>
 		</div>
@@ -37,16 +38,24 @@ import Footer from '../components/Footer.astro';
 				<img src="/img/aboutme.jpg" alt="Thomas' image" width="400" height="400" />
 			</div>
       <div class="about-skills">
-        <h3>My Skills</h3>
-        <div class="skills-list">
-          <span class="skill">HTML</span>
-          <span class="skill">CSS</span>
-          <span class="skill">JavaScript</span>
-          <span class="skill">React</span>
-          <span class="skill">c# .net</span>
-          <span class="skill">symfony</span>
-        </div>
-      </div>
+				<h3>My Skills</h3>
+				<div class="skills-category">
+					<h4>Programming Languages</h4>
+					<div class="skills-list">
+						<span class="skill">C#</span>
+						<span class="skill">Python</span>
+						<span class="skill">PHP</span>
+						<span class="skill">PL/SQL</span>
+					</div>
+				</div>
+				<div class="skills-category">
+					<h4>Frameworks</h4>
+					<div class="skills-list">
+						<span class="skill">React</span>
+						<span class="skill">Symfony</span>
+					</div>
+				</div>
+			</div>
     </div>
   </section>
 
