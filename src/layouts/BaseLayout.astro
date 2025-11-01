@@ -16,7 +16,7 @@ import "../styles/global.css";
 		<meta property="og:url" content="thomaspazze.com">
 		<meta property="og:type" content="website">
 		<meta property="og:image" content="/public/logo.svg">
-		<link rel="icon" href="/public/logo.svg" type="image/png">
+		<link rel="icon" href="/favicon.svg" type="image/png">
 	</head>
   <body>
     <slot name="navbar" {lang} />
@@ -24,7 +24,7 @@ import "../styles/global.css";
       <slot />
     </main>
     <slot name="footer" {lang} />
-		<script>
+		<script> // Navbar burger menu script
 			document.addEventListener("DOMContentLoaded", () => {
 				const burger = document.getElementById("burger");
 				const navLinks = document.getElementById("nav-links");
