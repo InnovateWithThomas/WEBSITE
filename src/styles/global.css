@@ -854,7 +854,7 @@ h1 {
 
     z-index: -1;
 
-		background-image: url("/underline.svg");
+		background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg');
     background-repeat: no-repeat;
 
 		background-size: cover;
