@@ -842,8 +842,23 @@ h1 {
 }
 
 .need-highlited em {
-  background-color: var(--color-secondary-hover);
-  color: var(--color-secondary);
+	position: relative;
+
+	&::after {
+    content: '';
+    position: absolute;
+    bottom: -0.125rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    height: 0.75rem;
+
+    z-index: -1;
+
+		background-image: url("underline.svg");
+    background-repeat: no-repeat;
+
+		background-size: cover;
+	}
 }
 
 /* Work in progress */
