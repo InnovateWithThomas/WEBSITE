@@ -63,6 +63,7 @@ export default function Navbar({ lang, translatedPostUrl }) {
         <div id="nav-footer">
           <div id="nav-social-links">
             <a
+              id="lindedin-link"
               href="https://www.linkedin.com/in/thomas-pazze/"
               target="_blank"
               rel="noopener noreferrer"
